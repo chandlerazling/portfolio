@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:200,300,400');
+$font: 'Muli', sans-serif;
+$darkGray: #3a4a46;
+
+body {
+  font-family: $font;
+  color: $darkGray;
+  overflow: hidden;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  //left: 50%;
+  //transform: translateX(-50%);
+  //top: 40px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav li {
+  position: relative;
+  //display: inline-block;
+  margin: 0 50px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-size: 16px;
+  letter-spacing: .5px;
+  display: none;
+  top: 400px;
+  }
+
+.hero-container {
+  width: 800px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+.greeting-container {
+  margin-top: 10%;
+  width: 350px;
+  height: 300px;
+  position: relative;
+}
+
+.hero-img {
+  max-height: 400px;
+  max-width: 400px;
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+}
+.hero h1 {
+  font-weight: 200;
+  font-size: 48px;
+  width: 400px;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #4d6754;
+}
+
+.hero h2 {
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 33px;
+  letter-spacing: 1.45px;
+  text-align: right;
+  width: 365px;
+  position: absolute;
+  right: 0;
+  bottom:0;
+}
