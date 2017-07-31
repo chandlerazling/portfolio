@@ -7,22 +7,59 @@
 <body>
 <nav>
 <ul>
-<li class="first-link">About</li>
-<li class="second-link">UX Work</li>
-<li class="third-link">Artwork</li>
-<li class="fourth-link">Contact</li>
+<li class="first-link" data-section="about">About</li>
+<li class="second-link" data-section="ux-work">UX Work</li>
+<li class="third-link" data-section="artwork">Artwork</li>
+<li class="fourth-link" data-section="contact">Contact</li>
 <ul>
 </nav>
 <section class="hero">
 <div class="hero-container">
 <div class="greeting-container">
 <h1>Hello, I'm Chandler Azling</h1>
-<h2>I'm a UX designer, programmer, and artist.</h2>
+<h2>I'm a UI designer, programmer, and artist.</h2>
 </div>
 <img class="hero-img" src="images/hero-image.png" />
 </div>
 </section>
+<div class='parent'>
+<div class='main-container'>
+<div class='blank'></div> 
+<section class="about">
+<p> BIO </p>
+</section>
+<section class="ux-work">
+<p> UX WORK!! </p>
+</section>
+<section class="artwork">
+  <div id= "artwork-grid">
+    <a class = "thumbnail" data-num= "1" style= "border:0"><figure><img src="thumbnails/1.png" alt= ""></figure></a>
+    <a class = "thumbnail" data-num= "2" style= "border:0"><figure><img src="thumbnails/2.png" alt= ""> </figure></a>
+    <a class = "thumbnail" data-num= "3" style= "border:0"><figure><img src="thumbnails/3.png" alt= ""> </figure></a>
+    <a class = "thumbnail" data-num= "4" style= "border:0"><figure><img src="thumbnails/4.png" alt= ""> </figure></a>
+    <a class = "thumbnail" data-num= "5" style= "border:0"><figure><img src="thumbnails/5.png" alt= ""> </figure></a>
+    <a class = "thumbnail" data-num= "6" style= "border:0"><figure><img src="thumbnails/6.png" alt= ""> </figure></a>
+    <a class = "thumbnail" data-num= "7" style= "border:0"><figure><img src="thumbnails/7.png" alt= ""> </figure></a>
+    <a class = "thumbnail" data-num= "8" style= "border:0"><figure><img src="thumbnails/8.png" alt= ""> </figure></a>
+    <a class = "thumbnail" data-num= "9" style= "border:0"><figure><img src="thumbnails/9.png" alt= ""> </figure></a>
+    <a class = "thumbnail" data-num= "10" style= "border:0"><figure><img src="thumbnails/10.png" alt= ""> </figure></a>
+    <a class = "thumbnail" data-num= "11" style= "border:0"><figure><img src="thumbnails/11.png" alt= ""> </figure></a>
+    <a class = "thumbnail" data-num= "12" style= "border:0"><figure><img src="thumbnails/12.png" alt= ""> </figure></a>
+  </div>
+  <div id="full-artwork">
+  <figure> <img class="full-artwork-img" id= "first-artwork" src=""/></figure>
+  <figure> <img class="full-artwork-img" id= "second-artwork" src=""/></figure>
+  <a id='previous'>previous</a>
+  <a id='next'> next </a>
+  </div>
+</section>
+<section class="contact">
+<p> contact </p>
+</section>
+</div>
+</div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="scripts/jquery.js"></script>
 <script src="scripts/velocity.js"></script>
 <script src="scripts/script.js"></script>
 </body>

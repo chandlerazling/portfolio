@@ -4,9 +4,22 @@ body {
   color: #3a4a46;
   overflow: hidden; }
 
+.parent {
+  overflow: hidden;
+  width: 1000;
+  height: 1000; }
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; }
+
+a:hover {
+  cursor: url("file:///Users/Chanandler/Documents/portfolio/heh.png"), pointer; }
+
 nav {
   position: absolute;
   width: 100%;
+  top: 0;
   text-align: center; }
 
 nav ul {
@@ -21,13 +34,32 @@ nav li {
   text-size: 16px;
   letter-spacing: .5px;
   display: none;
-  top: 400px; }
+  top: 400px;
+  z-index: 5; }
+
+nav li:hover {
+  cursor: url("file:///Users/Chanandler/Documents/portfolio/heh.png"), pointer; }
+
+nav li.active {
+  text-shadow: 2px 1px black, 1px 1px black;
+  color: #A6E8D8; }
+
+.main-container {
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+  position: relative;
+  opacity: 0;
+  top: 50px;
+  overflow-x: hidden;
+  overflow-y: auto; }
 
 .hero-container {
   width: 800px;
   position: relative;
   margin: 0 auto;
-  margin-top: 10%; }
+  margin-top: 5%;
+  overflow: auto; }
 
 .greeting-container {
   margin-top: 10%;
@@ -36,7 +68,7 @@ nav li {
   position: relative; }
 
 .hero-img {
-  max-height: 400px;
+  max-height: 380px;
   max-width: 400px;
   position: absolute;
   right: 0;
@@ -62,5 +94,79 @@ nav li {
   position: absolute;
   right: 0;
   bottom: 0; }
+
+.about {
+  text-align: center;
+  height: 1000px; }
+
+.ux-work {
+  height: 1000px; }
+
+.artwork {
+  height: 1000px; }
+
+#artwork-grid {
+  width: 100%;
+  font-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap; }
+
+.thumbnail {
+  display: inline-block;
+  font-size: 16pt;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  overflow: hidden;
+  width: calc(25% - 6px);
+  /*
+  -webkit-transition: .3s -webkit-opacity linear;
+  -moz-transition: .3s -moz-opacity linear;
+  -moz-transition: .3s opacity linear;
+  -ms-transition: .3s -ms-opacity linear;
+  -o-transition: .3s -o-opacity linear;
+  transition: .3s opacity linear; 
+  opacity: 1; */ }
+
+.thumbnail:nth-of-type(2n) {
+  margin-right: 8px; }
+
+.thumbnail:nth-of-type(4n) {
+  margin-right: 0; }
+
+figure {
+  margin: 0; }
+
+.thumbnail img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+  display: block; }
+
+#full-artwork {
+  display: none;
+  height: 100%;
+  width: 100%;
+  color: blue;
+  font-size: 48px;
+  text-align: center; }
+
+#full-artwork a {
+  position: relative; }
+
+.full-artwork-img {
+  position: relative;
+  max-width: 100%;
+  max-height: 1500px;
+  margin: 0 auto; }
+
+#second-artwork {
+  opacity: 0; }
+
+.contact {
+  height: 1000px; }
+
+.blank {
+  height: 1000px; }
 
 /*# sourceMappingURL=main.css.map */
