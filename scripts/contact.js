@@ -23,10 +23,12 @@
                 message1: message,
             }, function(data) {
             $("#return-message").append(data); 
-            if (data == "Your message has been received! I will get back to you ASAP.") {
+            if (data == "Your message has been sent! I will get back to you as soon as I can.") {
                 $("#contact-form").hide();
                 $("#contact")[0].reset();
-        }
+            } else {
+                $("#email").css({border:'1px solid #EA4136'});
+            }
         })
         }});
 $('textarea').on('input', function(e) {

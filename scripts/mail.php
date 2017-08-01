@@ -10,7 +10,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 	$subject = "Contact Form";
 	$mailheader = "From: $email \r\n";
 	mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-	echo "Your message has been received! I will get back to you ASAP.";
+	echo "Your message has been sent! I will get back to you as soon as I can.";
 	} else {
 		echo "Sorry! There was an issue with your email address, please fix it or try another one.";
 }

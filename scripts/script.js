@@ -18,6 +18,12 @@ $('nav li').hover(function(event) { pulse($(this), 1.1)},
 
 $('nav li').click(function(event) {
   $(this).css({transform: 'scaleX(1) scaleY(1)'});
+  if ($(this).data('section') == 'contact') {
+    if ($('#return-message').text() !== '') {
+        $('#return-message').text('');
+        $('#contact-form').show();
+    }
+  }
   if ($('.hero-container').is(':visible')) {
     $('.hero-container').velocity('slideUp', {easing: [0.6, -0.28, 0.735, 0.045]}, {duration: 800}, function() {$('.hero-container').hide()});
     $('nav li').velocity({top:0}, {delay: 200});
