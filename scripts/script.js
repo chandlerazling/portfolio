@@ -163,6 +163,6 @@ $(window).load(function() {
   $('.second-link').velocity({top:linkTop},{duration: 600, easing: linkCurve, delay: linkDelay});
   $('.third-link').velocity({top:linkTop},{duration: 400, easing: linkCurve, delay: linkDelay});
   $('.fourth-link').velocity({top:linkTop},{duration: 200, easing: linkCurve, delay: linkDelay});
-  $('#artwork-grid img').load();
+  $('#artwork-grid img ').load();
   $('#full-artwork').css({top:$(window).height()+20});
 });

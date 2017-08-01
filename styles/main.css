@@ -195,8 +195,61 @@ figure {
 #second-artwork {
   opacity: 0; }
 
+/************
+CONTACT 
+*************/
 .contact {
   height: 1000px; }
+
+#contact-form {
+  margin: 0 auto;
+  width: 60%;
+  text-align: left;
+  font-size: 14px;
+  color: #3a4a46; }
+
+input[type=text] {
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #3a4a46;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  font-size: 15px; }
+
+textarea {
+  -webkit-appearance: none;
+  height: 100px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #3a4a46;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 15px;
+  outline: none;
+  resize: none; }
+
+button {
+  -webkit-appearance: none;
+  text-align: center;
+  font-size: 13px;
+  background-color: #A6E8D8;
+  border: none;
+  color: #3a4a46;
+  padding: 8px 16px;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-bottom: 10px;
+  outline: none;
+  box-shadow: 2px 2px #3a4a46; }
+
+button:hover {
+  background-color: #E5EBE9;
+  cursor: pointer; }
 
 .blank {
   height: 1000px; }
