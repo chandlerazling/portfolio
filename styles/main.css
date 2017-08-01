@@ -14,7 +14,7 @@ body {
   background: transparent; }
 
 a:hover {
-  cursor: url("file:///Users/Chanandler/Documents/portfolio/heh.png"), pointer; }
+  cursor: url("file:///Users/Chanandler/Documents/portfolio/pointer-cursor.png"), pointer; }
 
 nav {
   position: absolute;
@@ -38,7 +38,7 @@ nav li {
   z-index: 5; }
 
 nav li:hover {
-  cursor: url("file:///Users/Chanandler/Documents/portfolio/heh.png"), pointer; }
+  cursor: url("file:///Users/Chanandler/Documents/portfolio/pointer-cursor.png"), pointer; }
 
 nav li.active {
   text-shadow: 2px 1px black, 1px 1px black;
@@ -118,15 +118,7 @@ nav li.active {
   margin-bottom: 8px;
   margin-right: 8px;
   overflow: hidden;
-  width: calc(25% - 6px);
-  /*
-  -webkit-transition: .3s -webkit-opacity linear;
-  -moz-transition: .3s -moz-opacity linear;
-  -moz-transition: .3s opacity linear;
-  -ms-transition: .3s -ms-opacity linear;
-  -o-transition: .3s -o-opacity linear;
-  transition: .3s opacity linear; 
-  opacity: 1; */ }
+  width: calc(25% - 6px); }
 
 .thumbnail:nth-of-type(2n) {
   margin-right: 8px; }
@@ -147,18 +139,58 @@ figure {
   display: none;
   height: 100%;
   width: 100%;
-  color: blue;
-  font-size: 48px;
-  text-align: center; }
+  background-color: white;
+  text-align: center;
+  z-index: 30;
+  position: fixed;
+  left: 0;
+  top: 0; }
 
-#full-artwork a {
-  position: relative; }
+#artwork-description {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 85%; }
 
-.full-artwork-img {
-  position: relative;
-  max-width: 100%;
-  max-height: 1500px;
-  margin: 0 auto; }
+.full-artwork-image {
+  position: absolute;
+  max-width: 80%;
+  max-height: 80%;
+  top: 5%;
+  transform: translateX(-50%);
+  left: 50%; }
+
+#exit-artwork-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px; }
+
+#exit-artwork-btn img {
+  width: 25px;
+  height: auto; }
+
+#artwork-buttons {
+  list-style-type: none;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0px; }
+
+#artwork-buttons li {
+  display: inline-block;
+  margin: 0 50px; }
+
+#next-artwork-btn {
+  position: absolute;
+  top: 40%;
+  left: 90%; }
+
+#previous-artwork-btn {
+  position: absolute;
+  top: 40%;
+  right: 90%; }
 
 #second-artwork {
   opacity: 0; }

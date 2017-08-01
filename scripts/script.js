@@ -1,7 +1,20 @@
 
 
-$('nav li').hover(function(event) { $(this).velocity({scaleX: 1.1, scaleY:1.1},{duration: 250, easing: [0.33, 0.23, 0.13, 1.3]})},
- function(event) {$(this).velocity({scaleX: 1, scaleY:1},{duration: 200, easing: [0.33, 0.23, 0.13, 1.3]})});
+/*artwork titles and media used */
+var artworkTitle = ["Santa Barbara","Polson Mountains","Flower Boxes in Yamanashi","Untitled","Cayucos","Into","Sink","Untitled","Fuji Sunflowers","Dissolve","Fly","mermaid character design"],
+    artworkMedia = ["Digital", "Digital", "Digital", "Watercolor", "Digital", "Digital", "Oil", "Digital", "Watercolor & Ink", "Digital", "Oil", "Digital"];
+
+/* Pulsing animation for hovering */
+var pulse = function(object, scale) {
+  object.velocity({scaleX: scale, scaleY:scale},{duration: 250, easing: [0.33, 0.23, 0.13, 1.3]});
+}
+
+$('#full-artwork a').hover(function(event) {
+  pulse($(this), 1.1);
+}, function(event) {pulse($(this),1)});
+
+$('nav li').hover(function(event) { pulse($(this), 1.1)},
+ function(event) {pulse($(this), 1)});
 
 $('nav li').click(function(event) {
   $(this).css({transform: 'scaleX(1) scaleY(1)'});
@@ -18,6 +31,7 @@ $('nav li').click(function(event) {
   $(this).addClass('active');
 });
 
+/* Find what direction mouse came from on hover */
 var findClosestSide = function(eventX, eventY, elOffset, elHeight, elWidth) {
   var closest = {};
   var top = Math.abs(eventY - elOffset.top)
@@ -29,8 +43,9 @@ var findClosestSide = function(eventX, eventY, elOffset, elHeight, elWidth) {
   closest[left] = 'left';
   closest[right] = 'right';
   return closest[Math.min(top,bottom, left, right)];
-
 }
+
+/* 'pushing' animation on hover - ie if mouse came from left side of thumbnail, 'push' thumbnail to the right */
 $('.thumbnail').hover(function(event) {
   var amount = 6;
   var dur = 200;
@@ -51,20 +66,24 @@ $('.thumbnail').hover(function(event) {
     default: 
       break;
   }
-
 }, function(event) {
   $(this).velocity({translateX:0, translateY:0}, {duration: 200, easing: [0.175, 0.885, 0.32, 1.275]});
 });
 
 $('.thumbnail').click(function(event) {
-  $('#artwork-grid').velocity({scaleX: 0, scaleY: 0}, {easing: 'easeInQuart', duration: 400});
-  $('#artwork-grid').velocity('fadeOut');
   currentArtworkNumber = $(this).data('num');
-  $('#first-artwork').attr('src', getArtURL(currentArtworkNumber));
-  $('#full-artwork').velocity('fadeIn', {delay: 800, easing: 'easeInQuart'});
-
+  $('#artwork-title').text(getArtworkTitle(currentArtworkNumber));
+  $('#artwork-media').text(getArtworkMedia(currentArtworkNumber));
+  if ($('#second-artwork').attr('src') !== '') {
+    $('#second-artwork').attr('src', getArtURL(currentArtworkNumber));
+  } else {
+    $('#first-artwork').attr('src', getArtURL(currentArtworkNumber));
+  }
+  $('#full-artwork').velocity('fadeIn');
+  $('#full-artwork').velocity({top:0}, {easing: 'easeOutQuart'});
 });
 
+/* Number (by order of thumbnails) of the artwork currently displayed */
 var currentArtworkNumber = 0;
 
 var getNextArtworkNumber = function() {
@@ -87,33 +106,55 @@ var getArtURL = function(num) {
   return 'artwork/'+num+'.png';
 }
 
-$('#next').click(function(event) {
+var getArtworkTitle = function(num) {
+  return artworkTitle[num - 1];
+}
+
+var getArtworkMedia = function(num) {
+  return artworkMedia[num - 1];
+}
+
+$('#next-artwork-btn').click(function(event) {
   currentArtworkNumber = getNextArtworkNumber();
   var currentArtwork = $('#second-artwork');
   var nextArtwork = $('#first-artwork');
-  $('#first-artwork').attr('src', getArtURL(currentArtworkNumber));
-  /*
   if ($('#second-artwork').attr('src') === '') {
     currentArtwork = $('#first-artwork');
     nextArtwork = $('#second-artwork');
   }
-  $('.artwork').velocity('scroll', {container: $('.main-container')});
-  nextArtwork.attr('src', getArtURL(currentArtworkNumber));
-  currentArtwork.velocity({right: $(window).width(),}, {duration: 500, delay: 500, complete: function() {
+  currentArtwork.velocity({left: -1*currentArtwork.width()}, {duration: 500, complete: function() {
       currentArtwork.attr('src', '');
       currentArtwork.css({opacity: 0});
-      nextArtwork.css({left: $(window).width()+ 20, opacity: 1}).velocity({left:0});
-    }}); */
-
+    }});
+  nextArtwork.css({left: $(window).width()+ 20}).attr('src', getArtURL(currentArtworkNumber)).velocity({opacity: 1, left:'50%'}, {duration: 500});
+  $('#artwork-title').text(getArtworkTitle(currentArtworkNumber));
+  $('#artwork-media').text(getArtworkMedia(currentArtworkNumber));
 });
+    
 
-$('#previous').click(function(event) {
+$('#previous-artwork-btn').click(function(event) {
   currentArtworkNumber = getPreviousArtworkNumber();
-  $('#full-artwork-img').velocity({opacity:0}, function() {$('#full-artwork-img').attr('src', getArtURL(currentArtworkNumber));});
-  $('#full-artwork-img').velocity({opacity:1}, {delay: 1000, complete: function() {$('.artwork').velocity('scroll',{container:$('.main-container'), duration: 100})}});
+  var currentArtwork = $('#second-artwork');
+  var previousArtwork = $('#first-artwork');
+  if ($('#second-artwork').attr('src') === '') {
+    currentArtwork = $('#first-artwork');
+    previousArtwork = $('#second-artwork');
+  }
+  currentArtwork.velocity({left: $(window).width()}, {complete: function() {
+      currentArtwork.attr('src', '');
+      currentArtwork.css({opacity: 0});
+    }});
+  previousArtwork.css({left: -1*previousArtwork.width()}).attr('src', getArtURL(currentArtworkNumber)).velocity({opacity: 1, left:'50%'}, {duration: 500});
+  $('#artwork-title').text(getArtworkTitle(currentArtworkNumber));
+  $('#artwork-media').text(getArtworkMedia(currentArtworkNumber));
 });
-$(window).load(function() {
 
+$('#exit-artwork-btn').click(function(event) {
+  $('#full-artwork').velocity({top: $(window).height() + 20}, {easing: 'easeInQuart', complete: function() {$('#full-artwork').css({display:'none'})}});
+
+})
+
+$(window).load(function() {
   $('nav li').css({top: $(window).height() +20 , display:'inline-block'});
   var linkTop = ($('.hero-container').offset().top + $('.hero-container').height() + 30);
   var linkCurve = [0.33, 0.23, 0.13, 1.3];
@@ -122,5 +163,6 @@ $(window).load(function() {
   $('.second-link').velocity({top:linkTop},{duration: 600, easing: linkCurve, delay: linkDelay});
   $('.third-link').velocity({top:linkTop},{duration: 400, easing: linkCurve, delay: linkDelay});
   $('.fourth-link').velocity({top:linkTop},{duration: 200, easing: linkCurve, delay: linkDelay});
-  $('#artwork-grid').load();
+  $('#artwork-grid img').load();
+  $('#full-artwork').css({top:$(window).height()+20});
 });
