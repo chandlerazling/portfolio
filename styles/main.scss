@@ -113,12 +113,26 @@ nav li.active {
   bottom:0;
 }
 
+/***********
+ABOUT 
+***********/
 .about {
-  text-align: center;
   //font-size: 50px;
   height: 1000px;
+  padding-top: 2%;
 }
 
+#about-photo {
+  width:40%;
+  height: auto;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#about-description {
+  line-height: 25px;
+  font-weight: 300;
+}
 .ux-work {
   height: 1000px;
 }
