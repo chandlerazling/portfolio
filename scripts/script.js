@@ -37,6 +37,12 @@ $('nav li').click(function(event) {
   $(this).addClass('active');
 });
 
+$('.case-study-button').hover(function(event) {
+  pulse($(this), 1.1);
+}, function(event) {
+  pulse($(this), 1);
+});
+
 /* Find what direction mouse came from on hover */
 var findClosestSide = function(eventX, eventY, elOffset, elHeight, elWidth) {
   var closest = {};
@@ -160,7 +166,8 @@ $('#exit-artwork-btn').click(function(event) {
 
 })
 
-$(window).load(function() {
+$(document).ready(function() {
+  //Barba.Pjax.start();
   $('nav li').css({top: $(window).height() +20 , display:'inline-block'});
   var linkTop = ($('.hero-container').offset().top + $('.hero-container').height() + 30);
   var linkCurve = [0.33, 0.23, 0.13, 1.3];

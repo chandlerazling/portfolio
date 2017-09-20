@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:200,300,400");
 body {
-  font-family: "Muli", sans-serif;
+  font-family: "Muli", sans-serif !important;
   color: #3a4a46;
   overflow: hidden; }
 
 .parent {
   overflow: hidden;
   width: 100%;
-  height: 1000; }
+  height: 1000px; }
 
 ::-webkit-scrollbar {
   width: 0px;
@@ -45,8 +45,10 @@ nav li.active {
   color: #A6E8D8; }
 
 .main-container {
+  height: 1000px; }
+
+.container {
   width: 100%;
-  height: 1000px;
   margin: 0 auto;
   position: relative;
   opacity: 0;
@@ -116,9 +118,30 @@ ABOUT
 #about-description {
   line-height: 25px;
   font-weight: 300; }
-
+/******
+UX WORK
+******/
 .ux-work {
   height: 1000px; }
+
+.case-study-button {
+  width: 140%;
+  margin-left: -20%;
+  text-align: center;
+}
+.case-study-button img {
+  height: 100px;
+  padding:50px 0;
+}
+
+#quickbites {
+  background-image: linear-gradient(-225deg, rgba(255,111,0,0.84) 0%, #FF4519 82%);
+}
+
+#vivatrix {
+  background: #1184C2;
+  background-image: linear-gradient(-126deg, #965DE2 0%, #1184C2 70%);
+}
 
 .artwork {
   height: 1000px;
@@ -211,6 +234,10 @@ figure {
   top: 40%;
   right: 90%; }
 
+.artwork-btn img{
+    width: 25px;
+  }
+
 #second-artwork {
   opacity: 0; }
 
@@ -274,6 +301,20 @@ button {
 button:hover {
   background-color: #E5EBE9;
   cursor: pointer; }
+
+.case-study-containr {
+  opacity: 0;
+  height: 800px; }
+
+.case-study {
+  width: 60%;
+  height: 100%;
+  line-height: 24px;
+  margin: 0 auto; }
+
+.case-study h1 {
+  font-size: 25px;
+  font-weight: 200; }
 
 .blank {
   height: 1000px; }

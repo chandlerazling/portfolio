@@ -9,10 +9,11 @@ body {
   overflow: hidden;
 }
 
+
 .parent {
   overflow: hidden;
   width: 100%;
-  height: 1000;
+  height: 1000px;
 }
 
 ::-webkit-scrollbar {
@@ -55,8 +56,10 @@ nav li.active {
 }
 
 .main-container {
+  height:1000px;
+}
+.container {
   width: 100%;
-  height: 1000px;
   margin: 0 auto;
   position: relative;
   opacity: 0;
@@ -311,7 +314,22 @@ button:hover {
   cursor: pointer;
 }
 
+.case-study-container {
+  opacity:0;
+  height:800px;
+}
 
+.case-study {
+  width:60%;
+  height:100%;
+  line-height: 24px;
+  margin: 0 auto;
+}
+
+.case-study h1 {
+  font-size: 25px;
+  font-weight: 200;
+}
 .blank {
   height: 1000px;
 }

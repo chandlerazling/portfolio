@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<link rel="stylesheet" type="text/css" href="styles/case-study.css">
+</head>
+<body>
+<nav>
+<ul>
+<li class="first-link" data-section="about">About</li>
+<li class="second-link active" data-section="ux-work">UX Work</li>
+<li class="third-link" data-section="artwork">Artwork</li>
+<li class="fourth-link" data-section="contact">Contact</li>
+<ul>
+</nav>
+<div class='container main-container'>
+  <div class="baby-container">
+    <div id="artbox-header" class="header-image"> </div>
+    <div class="overview case-study-container">
+      <h1> Overview </h1>
+      <p>Artists are constantly moving from one social media platform to the next and face many issues with uploading and sharing their works. I wanted to create an experience that is specifically catered to artists and fulfills their needs in sharing work in both a casual and a professional context. </p>
+    </div>
+    <div class="user-personas case-study-container">
+      <h1>User Personas</h1>
+      <p>I interviewed three artists and used them to create user personas. One was an artist who uses different social media to share her work, one was experienced in art but has only uploaded work for a portfolio site, and the last was a new artist who was looking to find artists to follow and get inspiration from. </p>
+      <div id="persona-container">
+        <img id="user-persona-1" src="images/artbox/user-persona-1.png"/>
+        <img id="user-persona-2" src="images/artbox/user-persona-2.png"/>
+        <img id="user-persona-3" src="images/artbox/user-persona-3.png"/>
+      </div>
+    </div>
+    <div class="user-flows case-study-container">
+      <h1> User Flows </h1>
+      <p>My focus was on uploading and collaborating on work. I realized collaboration, especially on a work level, was not needed for an MVP. I also took out notes, which I think would be a nice feature to have later on as to share ideas or create tutorials. The MVP I ended up with was a simple platform to upload work, follow users, and use uploaded work to create a portfolio site. </p>
+      <img src="images/artbox/user-flows.png"/>
+      <br class="clear"/>
+    </div>
+    <div class="wireframes case-study-container">
+      <h1>Wireframes</h1>
+        <p>What are the user needs? Upload work and interact with other users. This is what I had concentrated into my dashboard navigation.</p>
+        <img src="images/artbox/wireframe-dashboard.png" />
+        <p>Artbox is not just a social media platform - it can be used in a professional context. While each user has a public profile, they have the option to upgrade their account and create a separate site to showcase their work. The first tier is Portfolio, which allows a user to create a template portfolio site routed to their own domain (or a default Artbox supplied domain).  The next tier allows users to design the site themselves with a drag and drop style designer. </p>
+        <img src="images/artbox/wireframe-account.png" />
+        <br class="clear" />
+      <br class="clear"/>
+    </div>
+    <div class="mockups-prototypes case-study-container">
+      <h1>Mockups &amp; Prototypes </h1>
+      <p>I wanted to go for clean and modern look and otherwise my mockups stayed consistent with my wireframes. After doing some user testing, I changed some of the icons and the process for updating account settings. </p>
+      <div class="image-slider">
+        <div class="slider-screen">
+        <div class="slider-image active-image" id="toggle-1"></div>
+        <div class="slider-image inactive-image" id="toggle-2"></div>
+        </div>
+        <div id="image-slider-nav-bullets"></div>
+        <!--<img id="image-slider-desktop" src="images/artbox/slider-computer2.png" />-->
+        <img class='slider-arrow' id="previous-arrow" src="buttons/previous-arrow.png">
+        <img class='slider-arrow' id="next-arrow" src="buttons/next-arrow.png">
+      </div>
+      <br class="clear"/>
+    </div>
+    <div class="user-testing case-study-container">
+      <h1> User Testing</h1>
+      <p>I had users interact with the homepage, dashboard, and account settings page. All of the feedback was positive for navigating the dashboard and account settings. However, there was a lot of confusing with the homepage and as to what type of site Artbox is. Every user was unsure as to whether or not they could use the site for free and why exactly they would need to pay a subscription. I learned that I needed to make it more clear that subscriptions are optional and only for creating a portfolio while uploading artwork and following other artists is completely free.</p>
+    </div>
+    <div class="conclusion case-study-container">
+      <h1> Conclusion </h1>
+      <p>I think the overall flow and navigation of Artbox works well and also fulfills the top needs of artists who want to post work online. I was the most satisfied with my dashboard page as I feel that it is simple and easy to navigate. The homepage could still improve and better advertise what Artbox is about. I think the concept of Artbox is difficult to concentrate into a simple explanation as it acts as social media with other additions that users can pay for. This was something I was afraid wouldn’t work as it requires a platform for casual sharing and professional showcasing. However, I think this is something that could be really successful as a lot of artists who share work online also want to put that same work into a portfolio to show to employers. If I had more time I would definitely flesh out the portfolio concept more and design interfaces for that side of the site. I would also go deeper into the collaborative features of Artbox and ways that a user can organize their profile. From this project I learned the importance of referencing other interfaces to create new concepts. I also learned that there is no one ideal design for an interface and sometimes you just have to try out several designs and pick what you think would look best. </p>
+    </div>
+    <br class="clear"/>
+    <div class="end"></div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/velocity.js"></script>
+<script src="scripts/image-slider.js"></script>
+<script src="scripts/case-study.js"></script>
+</body>
+</html>
