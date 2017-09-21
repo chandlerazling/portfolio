@@ -65,7 +65,9 @@ nav li.active {
   position: relative;
   margin: 0 auto;
   margin-top: 5%;
-  overflow: auto; }
+  overflow: auto; 
+  opacity: 0;
+}
 
 .greeting-container {
   margin-top: 10%;

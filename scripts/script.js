@@ -1,5 +1,3 @@
-
-
 /*artwork titles and media used */
 var artworkTitle = ["Santa Barbara","Polson Mountains","Flower Boxes in Yamanashi","Untitled","Cayucos","Into","Sink","Untitled","Fuji Sunflowers","Dissolve","Fly","mermaid character design"],
     artworkMedia = ["Digital", "Digital", "Digital", "Watercolor", "Digital", "Digital", "Oil", "Digital", "Watercolor & Ink", "Digital", "Oil", "Digital"];
@@ -13,6 +11,11 @@ $('#full-artwork a').hover(function(event) {
   pulse($(this), 1.1);
 }, function(event) {pulse($(this),1)});
 
+var goToSection = function(section) {
+  $('.' + section).velocity('scroll', {container: $('.main-container'), easing: 'easeOutExpo', duration: 500});
+  $('.active').removeClass('active');
+  $('nav li[data-section="'+section+'"]').addClass('active');
+}
 $('nav li').hover(function(event) { pulse($(this), 1.1)},
  function(event) {pulse($(this), 1)});
 
@@ -27,14 +30,12 @@ $('nav li').click(function(event) {
   if ($('.hero-container').is(':visible')) {
     $('.hero-container').velocity('slideUp', {easing: [0.6, -0.28, 0.735, 0.045]}, {duration: 800}, function() {$('.hero-container').hide()});
     $('nav li').velocity({top:0}, {delay: 200});
-    $('.'+$(this).data('section')).velocity('scroll', {container: $('.main-container')});
+    goToSection($(this).data('section'));
     $('#artwork-grid').load();
     $('.main-container').velocity({opacity: '1'}, {delay: 800});
   } else {
-    $('.'+$(this).data('section')).velocity('scroll', {container: $('.main-container'), easing: 'easeOutExpo', duration: 500});
+    goToSection($(this).data('section'));
   }
-  $('.active').removeClass('active');
-  $(this).addClass('active');
 });
 
 $('.case-study-button').hover(function(event) {
@@ -167,15 +168,42 @@ $('#exit-artwork-btn').click(function(event) {
 })
 
 $(document).ready(function() {
-  //Barba.Pjax.start();
-  $('nav li').css({top: $(window).height() +20 , display:'inline-block'});
-  var linkTop = ($('.hero-container').offset().top + $('.hero-container').height() + 30);
-  var linkCurve = [0.33, 0.23, 0.13, 1.3];
-  var linkDelay = 700;
-  $('.first-link').velocity({top: linkTop},{duration: 800, easing: linkCurve, delay: linkDelay});
-  $('.second-link').velocity({top:linkTop},{duration: 600, easing: linkCurve, delay: linkDelay});
-  $('.third-link').velocity({top:linkTop},{duration: 400, easing: linkCurve, delay: linkDelay});
-  $('.fourth-link').velocity({top:linkTop},{duration: 200, easing: linkCurve, delay: linkDelay});
   $('#artwork-grid img ').load();
   $('#full-artwork').css({top:$(window).height()+20});
+  var section = window.location.href.slice(window.location.href.search('#')+1, window.location.href.length);
+  if ($.inArray(section, ['about', 'ux-work', 'artwork', 'contact']) !== -1) {
+    $(".hero-container").hide();
+    $('nav li').css({top:0, display:'inline-block'});
+    goToSection(section);
+    $('#artwork-grid').load();
+    $('.main-container').velocity({opacity: '1'}, {delay: 800, duration: 500});
+  } else {
+    $('.hero-container').velocity('fadeIn');
+    $('nav li').css({top: $(window).height() +20 , display:'inline-block'});
+    var linkTop = ($('.hero-container').offset().top + $('.hero-container').height() + 30);
+    var linkCurve = [0.33, 0.23, 0.13, 1.3];
+    var linkDelay = 700;
+    $('.first-link').velocity({top: linkTop},{duration: 800, easing: linkCurve, delay: linkDelay});
+    $('.second-link').velocity({top:linkTop},{duration: 600, easing: linkCurve, delay: linkDelay});
+    $('.third-link').velocity({top:linkTop},{duration: 400, easing: linkCurve, delay: linkDelay});
+    $('.fourth-link').velocity({top:linkTop},{duration: 200, easing: linkCurve, delay: linkDelay});
+  }
+
+
+  $('.case-study-button').click(function() {
+    var location = '';
+    switch($(this).attr('id')) {
+      case 'quickbites':
+        location = "quickbites.html";
+        break;
+      case 'artbox':
+        location = "artbox.html";
+        break;
+      case 'vivatrix':
+        location = "vivatrix.html";
+        break;
+      }
+
+    $(".main-container").velocity("fadeOut", {duration: 500, complete: function(){window.location.href = location;}});
+  })
 });
