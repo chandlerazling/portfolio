@@ -16,6 +16,11 @@ html {
 }
 body {
   margin:0;
+  padding:0;
+}
+p {
+  /*-webkit-margin-after: 0px;*/
+  -webkit-margin-before: 0px;
 }
 
 /* Sections

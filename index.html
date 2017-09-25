@@ -22,10 +22,9 @@
 <img class="hero-img" src="images/hero-image.png" />
 </div>
 </section>
-<div class='parent' id="barba-wrapper">
-<div class='container main-container barba-container'>
-<div class='blank'></div> 
-<section class="about section">
+<div class='parent'>
+<div class='container main-container'> 
+<section id="about" class="about section">
 <img id="about-photo" src="images/about-picture.jpg"/>
 <div id="about-description"> <p> Hey, I'm Chandler and I'm from Orange County, California. I have a bachelor's degree in Computer Science from UC Berkeley and my area of specialty is UI/UX design. I love hiking, watching animation, and exploring new places. (I've lived in Japan twice!) I also really love art and programming, and this has been a personal dilemma for some time. Which do I pursue? </p>
 
@@ -33,7 +32,7 @@
 In high school, my dream was to become a concept artist at an animation studio. However, I also really liked math and valued academics, so I decided to go to a university where I could pursue art as well as something technical. I chose UC Berkeley and fell in love with computer science my first semester. I was accepted into the Art Practice and Computer Science majors, but as I worked towards both I began to question my career path.  </p>
 
 <p>
-Although I really liked both computer science and art, I felt like I needed to focus on just one for my career. I also threw Japanese classes in the mix which just made things even more confusing. I chose to drop my art major so that I could study abroad in Japan and still graduate in 4 years, but art was always still on my mind. I tried computer graphics, but somehow the combination of art, coding, and linear algebra (my favorite math) turned out to be an absolute nightmare. </p>
+Although I really liked both computer science and art, I felt like I needed to focus on just one for my career. I also threw Japanese classes in the mix which just made things even more confusing. I chose to drop my art major so that I could study abroad in Japan and still graduate in 4 years, but art was always still on my mind.</p>
 
 <p>
 It wasn't until my very last semester of college that I discovered UI/UX design, and that's when everything clicked for me. I finally found something where I could combine my creative side and my technical side. I'm passionate about creating intuitive designs and thinking from the user's perspective. </p>
@@ -46,7 +45,7 @@ It wasn't until my very last semester of college that I discovered UI/UX design,
 <div class="case-study-button" id="vivatrix"><img src="images/vivatrix-logo.png"/></div>
 </section>
 </section>
-<section class="artwork section">
+<section id= "artwork" class="artwork section">
   <div id= "artwork-grid">
     <a class = "thumbnail" data-num= "1" style= "border:0"><figure><img src="thumbnails/1.png" alt= ""></figure></a>
     <a class = "thumbnail" data-num= "2" style= "border:0"><figure><img src="thumbnails/2.png" alt= ""> </figure></a>
@@ -62,10 +61,10 @@ It wasn't until my very last semester of college that I discovered UI/UX design,
     <a class = "thumbnail" data-num= "12" style= "border:0"><figure><img src="thumbnails/12.png" alt= ""> </figure></a>
   </div>
 </section>
-<section class="contact section">
+<section id="contact" class="contact section">
   <p id="return-message"></p>
-  <div id="contact-form">
-    <form id="contact">
+  <div id="contact-form-container">
+    <form id="contact-form">
       <p>Name* <input type="text" id="name"></p>
       <p>Email*<input type="text" id="email"></p> 
       <p>Phone<input type="text" id="phone"></p>
@@ -76,7 +75,7 @@ It wasn't until my very last semester of college that I discovered UI/UX design,
 </section>
 </div>
 <div id="full-artwork">
-<a id="exit-artwork-btn"> <img src="buttons/exit-button.png" /> </a>
+<a class="artwork-btn" id="exit-artwork-btn"> <img src="buttons/exit-button.png" /> </a>
 <figure> <img class="full-artwork-image" id="first-artwork" src="" /> 
 </figure>
 <figure> <img  class="full-artwork-image" id="second-artwork" src="" /> 

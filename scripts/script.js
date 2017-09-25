@@ -11,11 +11,35 @@ $('#full-artwork a').hover(function(event) {
   pulse($(this), 1.1);
 }, function(event) {pulse($(this),1)});
 
+
+/*** SECTIONS ****/
+var userScroll = true;
+var currentSection = "";
+var sectionsList = ['about', 'ux-work', 'artwork', 'contact'];
 var goToSection = function(section) {
-  $('.' + section).velocity('scroll', {container: $('.main-container'), easing: 'easeOutExpo', duration: 500});
+  userScroll = false;
+  $('.' + section).velocity('scroll', {container: $('.main-container'), easing: 'easeInSine', duration: 500, complete: function() {userScroll = true;}});
   $('.active').removeClass('active');
   $('nav li[data-section="'+section+'"]').addClass('active');
+  currentSection = section;
 }
+
+var getNextSection = function() {
+  var nextIndex = (sectionsList.indexOf(currentSection) + 1) % sectionsList.length;
+  return sectionsList[nextIndex];
+}
+
+var getPreviousSection = function() {
+  var prevIndex = (sectionsList.indexOf(currentSection) - 1);
+  if (prevIndex == -1) {
+    prevIndex = sectionsList.length - 1;
+  }
+  return sectionsList[prevIndex];
+}
+
+
+
+
 $('nav li').hover(function(event) { pulse($(this), 1.1)},
  function(event) {pulse($(this), 1)});
 
@@ -171,7 +195,7 @@ $(document).ready(function() {
   $('#artwork-grid img ').load();
   $('#full-artwork').css({top:$(window).height()+20});
   var section = window.location.href.slice(window.location.href.search('#')+1, window.location.href.length);
-  if ($.inArray(section, ['about', 'ux-work', 'artwork', 'contact']) !== -1) {
+  if ($.inArray(section, sectionsList) !== -1) {
     $(".hero-container").hide();
     $('nav li').css({top:0, display:'inline-block'});
     goToSection(section);
@@ -189,6 +213,20 @@ $(document).ready(function() {
     $('.fourth-link').velocity({top:linkTop},{duration: 200, easing: linkCurve, delay: linkDelay});
   }
 
+  
+  $('.main-container').scroll(function() {
+    if (userScroll) {
+      var nextSection = getNextSection();
+      var previousSection = getPreviousSection();
+      console.log(previousSection);
+      if(nextSection !== "about" && ($('#' + nextSection).offset().top < $(window).height())) {
+        goToSection(nextSection);
+      }  else if (previousSection !== "contact" && ($('#' + previousSection).offset().top + $('#' + previousSection).height() + $('nav').height()) > 10) {
+        goToSection(previousSection);
+      }
+    }
+
+  }); 
 
   $('.case-study-button').click(function() {
     var location = '';
