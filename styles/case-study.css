@@ -28,7 +28,8 @@ h1 {
 p {
   font-size: 16px;
   font-weight: 200;
-  line-height: 28px; }
+  line-height: 28px;
+  -webkit-margin-before: 16px; }
 
 .clear {
   clear: both; }
