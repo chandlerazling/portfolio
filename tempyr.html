@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<link rel="stylesheet" type="text/css" href="styles/case-study.css">
+</head>
+<body>
+<nav>
+<ul>
+<li class="first-link" data-section="about">About</li>
+<li class="second-link active" data-section="ux-work">UX Work</li>
+<li class="third-link" data-section="artwork">Artwork</li>
+<li class="fourth-link" data-section="contact">Contact</li>
+<ul>
+</nav>
+<div class='container main-container'>
+  <div class="baby-container">
+    <div style="background-image:url(images/tempyr/header-image.png)" class="header-image"> </div>
+    <div class="overview case-study-container">
+      <h1> Overview </h1>
+      <p>Timing and monitoring baking can be a headache. Furthermore, there’s no way to control an oven from a distance. Our solution was a create a smart oven that can be monitored and controlled with an app. My main roles in a team of five were creating wireframes, performing user testing, and developing the front end side of the app.</p>
+      <iframe style="margin: 0 auto; display: block;" width="560" height="315" src="https://www.youtube.com/embed/4AKPPr6gnCE" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="case-study-container">
+      <h1>Contextual Inquiry</h1>
+      <p>I interviewed a woman in her twenties. The interview took place while she was making dinner in her kitchen. She only used the stove and I focused on her interaction with it and asked questions based on that. Something that stood out to me was how fast and how much she was moving around. I asked about the idea of using an application while cooking, and she said it would be helpful if she could interact with the stove through voice control. </p>
+      <p>I also asked her a few questions about the oven although she didn’t use it. She said that she wouldn’t want to preheat it unless she was at home for safety issues. However, she would like to be able to make sure it’s turned off if she left home. She also said she doesn’t like using the oven because she can’t see the food cooking and judge when it should be done.</p>
+    </div>
+    <div class="case-study-container">
+    <h1>Wireframes</h1>
+    <p>I created wireframes that would be used for testing. These wireframes focus on the interaction with the oven. </p>
+    <img class="screens-image" src="images/tempyr/wireframe-group-1.png" />
+    <p>We also implemented a feature that allows people to set schedules for meals they might commonly make. Schedules can set the oven temperature and a timer and go through different phases of settings if needed. </p>
+    <img class="screens-image" src="images/tempyr/wireframe-group-2.png"/>
+    </div>
+     <div class="case-study-container">
+    <h1>User Testing: Low Fidelity</h1>
+    <p>For low fidelity user testing, we used printed out cards of the wireframes and I played the role of the computer. The biggest issues we found were:</p>
+    <p>1. Confusion over timer being in the "advanced" section. <br/>
+      2. Users didn't know how to preheat oven and were confused over how to start heating the oven. <br/>
+      3. After preheating, there was no way for a user to start the next step in a schedule.<br/>
+      4. Users can't tell what step of a schedule they are on from the home screen. <br/>
+      5. Users are able to create a schedule that has no preheating step in it.
+    </p>
+    <p>Fortunately, the majority of our issues had simple solutions. However, we redesigned our home screen to address the "advanced" options issue. We created two tabs - one for the oven view and one for the oven options. </p>
+    <img style="width: 50%; display:block; margin:0 auto" src='images/tempyr/user-test-1.png'/>
+    </div>
+    <div class="case-study-container">
+      <h1>Interactive Prototype</h1>
+      <p>I had a large role in developing the interactive prototype. This was developed in Kinoma Studio, an IDE that allows people to create smart phone and other applications from pure JavaScript.</p>
+      <img class="screens-image" src="images/tempyr/interactive-prototype.png" />
+      <br class="clear"/>
+    </div>
+    <div class="case-study-container">
+      <h1>User Testing: Prototype</h1>
+      <p>We tested three different users and had them interact with the oven and create and execute a schedule. All users experienced issues with the keyboard as they either couldn't find the "enter" button immediately or wanted to tap outside of the keyboard to hide it and could not do so. Another issue was that values in the timer weren't zero at default, which meant a user would have to type out the hours and minutes every time. Lastly, the positioning for the "add step" button in schedules was confusing for users. While the first two problems were simple programming fixes, the third resulted in a redesign of the schedule creation page to give more clarity.  </p>
+      <br class="clear"/>
+    </div>
+     <div class="case-study-container">
+    <h1>Conclusion</h1>
+    <p></p>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/velocity.js"></script>
+<script src="scripts/image-slider.js"></script>
+<script src="scripts/case-study.js"></script>
+</body>
+</html>
