@@ -194,6 +194,24 @@ p {
   height: 300px;
 }
 
+.other-case-studies ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.other-case-studies li {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  vertical-align: top;
+}
+.other-case-studies li img {
+  height: 60px;
+  padding: 70px 0;
+
+}
 /******
 Quickbites
 ******/
