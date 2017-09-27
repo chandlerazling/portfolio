@@ -28,6 +28,8 @@ nav {
   width: 100%;
   top: 0;
   text-align: center;
+  background-color: white;
+  z-index:20;
 }
 
 nav ul {
@@ -57,18 +59,17 @@ nav li.active {
 
 .main-container {
   height:1000px;
-}
-.container {
   width: 100%;
   margin: 0 auto;
   position: relative;
   opacity: 0;
-  top: 50px;
+  //top: 50px;
   overflow-x: hidden;
   overflow-y: auto;
 
 }
 .section {
+  padding-top: 50px;
   width: 80%;
   margin: 0 auto;
   margin-bottom: 15%;
@@ -120,11 +121,9 @@ nav li.active {
 /***********
 ABOUT 
 ***********/
-#about {
-  padding-top: 2%;
-}
 
 #about-photo {
+  padding-top: 2%;
   width:40%;
   height: auto;
   float: left;
@@ -132,6 +131,7 @@ ABOUT
   margin-bottom: 20px;
 }
 #about-description {
+  padding-top: 2%;
   line-height: 25px;
   font-weight: 300;
 }
