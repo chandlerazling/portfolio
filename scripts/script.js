@@ -178,7 +178,7 @@ $(document).ready(function() {
     $('.fourth-link').velocity({top:linkTop},{duration: 200, easing: linkCurve, delay: linkDelay});
   }
 
-  
+  /*
   $('.main-container').scroll(function() {
     if (userScroll) {
       var nextSection = getNextSection();
@@ -191,7 +191,7 @@ $(document).ready(function() {
       }
     }
 
-  }); 
+  });  */
 
   $('.case-study-button').click(function() {
     var location = '';

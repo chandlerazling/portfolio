@@ -116,11 +116,15 @@ ABOUT
 #about-description {
   padding-top: 2%;
   line-height: 25px;
-  font-weight: 300; }
+  font-weight: 300;
+  font-size: 14px; }
 
 /***********
 UX WORK
 ***********/
+.case-study-button:hover {
+  cursor: pointer; }
+
 #ux-work div {
   width: 140%;
   margin-left: -20%;
@@ -287,7 +291,25 @@ button {
   box-shadow: 2px 2px #3a4a46; }
 
 button:hover {
-  background-color: #E5EBE9;
+  color: #A6E8D8;
+  background-color: #3a4a46;
+  box-shadow: 2px 2px #A6E8D8;
   cursor: pointer; }
+
+/*********
+MEDIA QUERIES
+*******/
+@media only screen and (max-width: 1000px) {
+  .thumbnail {
+    width: calc(50% - 4px); }
+
+  .thumbnail:nth-of-type(2n) {
+    margin-right: 0; }
+
+  #about-description {
+    font-size: 18px; }
+
+  nav {
+    font-size: 20px; } }
 
 /*# sourceMappingURL=main.css.map */

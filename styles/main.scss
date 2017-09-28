@@ -134,12 +134,16 @@ ABOUT
   padding-top: 2%;
   line-height: 25px;
   font-weight: 300;
+  font-size: 14px;
 }
 
 
 /***********
 UX WORK
 ***********/
+.case-study-button:hover {
+  cursor: pointer;
+}
 
 #ux-work div {
   width: 140%;
@@ -332,6 +336,26 @@ button {
 }
 
 button:hover {
-  background-color: #E5EBE9;
+  color: $lightBlue;
+  background-color: $darkGray;
+  box-shadow: 2px 2px $lightBlue;
   cursor: pointer;
+}
+/*********
+MEDIA QUERIES
+*******/
+
+@media only screen and (max-width: 1000px) {
+  .thumbnail {
+    width: calc(50% - 4px);
+  }
+  .thumbnail:nth-of-type(2n) {
+    margin-right:0;
+  }
+  #about-description {
+    font-size: 18px;
+  }
+  nav {
+    font-size: 20px;
+  }
 }
