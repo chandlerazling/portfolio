@@ -1,3 +1,9 @@
+var setup = function() {
+  $(".parent").height($(window).innerHeight());
+  $(".main-container").height($(window).innerHeight());
+  $(".section").css({'min-height': $(window).innerHeight()});
+}
+
 /*artwork titles and media used */
 var artworkTitle = ["Santa Barbara","Polson Mountains","Flower Boxes in Yamanashi","Untitled","Cayucos","Into","Sink","Untitled","Fuji Sunflowers","Dissolve","Fly","mermaid character design"],
     artworkMedia = ["Digital", "Digital", "Digital", "Watercolor", "Digital", "Digital", "Oil", "Digital", "Watercolor & Ink", "Digital", "Oil", "Digital"];
@@ -157,6 +163,7 @@ $('#exit-artwork-btn').click(function(event) {
 })
 
 $(document).ready(function() {
+  setup();
   $('#artwork-grid img ').load();
   $('#full-artwork').css({top:$(window).height()+20});
   var section = window.location.href.slice(window.location.href.search('#')+1, window.location.href.length);
@@ -178,7 +185,7 @@ $(document).ready(function() {
     $('.fourth-link').velocity({top:linkTop},{duration: 200, easing: linkCurve, delay: linkDelay});
   }
 
-  /*
+  
   $('.main-container').scroll(function() {
     if (userScroll) {
       var nextSection = getNextSection();
@@ -191,8 +198,11 @@ $(document).ready(function() {
       }
     }
 
-  });  */
+  });  
 
+  $(window).resize( function() {
+    setup();
+  });
   $('.case-study-button').click(function() {
     var location = '';
     switch($(this).attr('id')) {
