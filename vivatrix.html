@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<link rel="stylesheet" type="text/css" href="styles/case-study.css">
+</head>
+<body>
+<nav>
+<ul>
+<li class="first-link" data-section="about">About</li>
+<li class="second-link active" data-section="ux-work">UX Work</li>
+<li class="third-link" data-section="artwork">Artwork</li>
+<li class="fourth-link" data-section="contact">Contact</li>
+<ul>
+</nav>
+<div class='container main-container'>
+  <div class="baby-container">
+    <div style="background-image:url(images/vivatrix/header-image.png)" class="header-image"> </div>
+    <div class="overview case-study-container">
+      <h1> Overview </h1>
+      <p>Vivatrix is a project I took on to practice branding, UI design, and front end development. It is a simple landing page that showcases the product.</p>
+      <a href="https://chandlerazling.github.io/vivatrix" target="_blank"><button type="button">View on Github </button></a>
+    </div>
+    <div class="case-study-container">
+      <h1>Wireframes</h1>
+      <p>After doing some research and analysis of other landing pages that advertise supplements, I wireframed two versions of the site. The main elements I wanted to include were an overview of the product, the results it has, an explanation of how it works, and testimonials. After getting feedback, I decided that the second version would give a better introduction to the product.</p>
+     <img style="width: 75%; display:block; margin: 0 auto" src="images/vivatrix/wireframes.png" />
+    </div>
+    <div class="case-study-container">
+    <h1>Branding</h1>
+    <p>For the logo, I sketched out designs that and then created them in sketch. I settled on a design that was in the middle of my variations as it had a nice balance between sharp edges and curves. </p>
+    <img style="width:50%; margin: 0 auto; display: block;" src="images/vivatrix/logo-designs.png" />
+    <p>I went through different variations of the brand name and decided on Vivatrix. I chose green for its associations with cleanliness, nature, and energy. </p>
+    <img style="width:80%; margin: 0 auto; display:block" src="images/vivatrix/final-logo.png"/>
+    </div>
+     <div class="case-study-container">
+    <h1>Styling</h1>
+    <p>I decided on an analogous color scheme as I felt that the cool colors created a sense of healing and revitalization. For the font, I chose Nanum Gothic since it is a clean and modern font. </p>
+    <img style="width: 60%; display:block; margin:0 auto" src='images/vivatrix/style-guide.png'/>
+    </div>
+    <div class="case-study-container">
+    <h1>Mockup</h1>
+    <p>For the most part, implementing the style and creating the mockup was a smooth process. I separated sections by background color, switching between white and combinations of the color scheme. The section that went through the most changes was the testimonials section. Originally, I had white text on the green background, which was difficult to read unless it was bold. I tried out different versions of white backgrounds for the individual testimonials and in my final design I separated the testimonial from the user into a white speech bubble. </p>
+    <img style="width: 60%; display:block; margin:0 auto" src='images/vivatrix/mockup.png'/>
+    </div>
+    <div class="case-study-container">
+      <h1>Development</h1>
+      <p>I developed a responsive page using HTML, CSS, and JQuery. I also experimented with motion design using the Velocity framework. I tried out different animations for elements as they come into view when scrolling. In addition, I used canvases for the "How It Works" section to animate the lines going between the different stages.</p>
+    </div>
+     <div class="case-study-container">
+    <h1>Conclusion</h1>
+    <p>This project was a good exercise for both design and development and I learned a lot. I think that overall my design works, but I could go through more iterations of the motion design. If I had more time, I would definitely work on the animations more as there are so many subtleties to motion design. There is still a lot more to learn about timing and easing, and how changing those affects the user experience. </p>
+    </div>
+    <div class="other-case-studies">
+      <h1 style="text-align: center"> Other Work </h1>
+      <ul>
+        <li class="case-study-button" id="artbox"><img src="images/artbox-logo.png"></li>
+        <li class="case-study-button" id="quickbites"><img src="images/quickbites-logo.png"></li>
+        <li class="case-study-button" id="tempyr"><img src="images/tempyr-logo.png"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/velocity.js"></script>
+<script src="scripts/utilites.js"></script>
+<script src="scripts/case-study.js"></script>
+</body>
+</html>
